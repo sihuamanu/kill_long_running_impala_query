@@ -1,0 +1,15 @@
+[CMLoginInfo]
+cmHost: YOUR_CM_HOST 
+cmPort: YOUR_CM_PORT
+cmUser: YOUR_CM_USER
+cmPasswd: YOUR_CM_PASSWORD 
+
+[ClusterInfo]
+clusterName: YOUR_CLUSTER_NAME
+
+[QueryUser]
+ImpalaQuerySuperUser: YOUR_USER,YOUR_USER
+ImpalaQueryForbidenUser: YOUR_USER,YOUR_USER
+
+[QueryRunningTime]
+queryRunningTime: 180s

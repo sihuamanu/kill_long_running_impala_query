@@ -1,0 +1,43 @@
+### 1. 部署CM_API
+## 方法一：
+git clone git://github.com/cloudera/cm_api.git
+cd cm_api/python
+sudo python setup.py install
+
+## 方法二：
+sudo apt-get install python-pip
+sudo pip install cm-api
+
+运行 pip show cm-api 检测是否部署完成
+
+### 2. 使用步骤
+## 2.1 配置文件config
+在配置文件config中，配置CM Login参数和Cluster名称, 超级用户，禁止用户，运行时间阈值
+
+## 2.2 运行主程序
+killLongRunningImpalaQueries.py
+
+### 3. 使用示例
+    ./killLongRunningImpalaQueries.py
+
+    Connecting to Cloudera Manager at master-1:7180
+    Located Impala Service: impala
+    -- Kill long running queries executed by the limited users-------------
+    queryState : RUNNING
+    queryId: 304b964ec6bbbd3d:216c155c00000000
+    user: impala
+    startTime: 2018-12-11 12:28:30 
+    query running time (seconds): 4
+    SQL: SELECT count(*) FROM accounts
+    Attempting to kill query...
+    ----------------Done---------------------
+
+    -- Kill Impala queries executed by the forbiden users ------------
+    queryState : RUNNING
+    queryId: 144196ffa317ff85:7ffd600100000000
+    user: impala
+    startTime: 2018-12-11 12:34:06 
+    query running time (seconds): 7
+    SQL: SELECT count(*) FROM accounts
+    Attempting to kill query...
+    ---------------Done----------------------
